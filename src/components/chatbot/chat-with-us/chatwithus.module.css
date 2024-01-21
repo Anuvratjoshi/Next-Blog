@@ -1,0 +1,32 @@
+/* chatwithus.module.css */
+.chatWithUsContainer {
+  position: fixed;
+  bottom: 26px;
+  right: 20px;
+  background-color: #4caf50; /* Vibrant green, you can change it */
+  color: #fff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 9;
+}
+
+.chatWithUsContainer:hover {
+  background-color: #45a049; /* Darker green on hover, you can change it */
+  transform: scale(1.05);
+}
+
+.chatIcon {
+  /* Add styles for your chat icon if you have one */
+  margin-right: 10px;
+}
+
+.chatText {
+  font-weight: bold;
+  font-size: 16px;
+  /* Add additional styles for the text if needed */
+}

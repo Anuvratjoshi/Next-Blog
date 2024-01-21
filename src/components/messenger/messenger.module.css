@@ -1,0 +1,161 @@
+.container {
+  background-color: rgb(28, 28, 28);
+  height: calc(100vh - 150px);
+  display: flex;
+  border-radius: 8px;
+}
+
+.chatMenu {
+  flex: 3.5; /* total = 12 -> 3.5 + 3.5 + 3 */
+}
+.chatMenuInput {
+  width: 90%;
+  border: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid gray;
+  background-color: transparent;
+  outline: none;
+  color: white;
+}
+.chatBox {
+  flex: 5.5;
+}
+
+.chatBoxBottom {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chatMessageInput {
+  color: #fff;
+  background-color: transparent;
+  width: 80%;
+  height: 90px;
+  padding: 10px;
+}
+
+.chatSubmitButton {
+  width: 70px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+}
+.chatOnline {
+  flex: 3;
+}
+
+.chatMenuWrapper,
+.chatBoxWrapper,
+.chatOnlineWrapper {
+  padding: 10px;
+  height: 100%;
+  margin-bottom: 10px;
+}
+
+.chatMenuWrapper,
+.chatBoxWrapper,
+.chatOnlineWrapper {
+  overflow: auto;
+}
+
+/* Scrollbar for searched author */
+
+.chatMenuWrapper::-webkit-scrollbar {
+  width: 1px;
+}
+
+.chatMenuWrapper::-webkit-scrollbar-track {
+  background-color: #000000;
+}
+
+.chatMenuWrapper::-webkit-scrollbar-thumb {
+  background-color: #6d6a6a;
+  border-radius: 6px;
+}
+
+.chatMenuWrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #716f71;
+}
+
+/* General scrollbar styles for Firefox and other browsers */
+.chatMenuWrapper::-moz-scrollbar {
+  width: 12px;
+}
+
+.chatMenuWrapper::-moz-scrollbar-thumb {
+  background-color: #535256;
+  border-radius: 6px;
+}
+
+.chatMenuWrapper::-moz-scrollbar-thumb:hover {
+  background-color: #716f71;
+}
+
+/* Scroll bar for texts authors */
+
+.chatBoxWrapper::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chatBoxWrapper::-webkit-scrollbar-track {
+  background-color: #000000;
+}
+
+.chatBoxWrapper::-webkit-scrollbar-thumb {
+  background-color: #6d6a6a;
+  border-radius: 6px;
+}
+
+.chatBoxWrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #716f71;
+}
+
+/* General scrollbar styles for Firefox and other browsers */
+.chatBoxWrapper::-moz-scrollbar {
+  width: 12px;
+}
+
+.chatBoxWrapper::-moz-scrollbar-thumb {
+  background-color: #535256;
+  border-radius: 6px;
+}
+
+.chatBoxWrapper::-moz-scrollbar-thumb:hover {
+  background-color: #716f71;
+}
+
+/* Scroll bar for online authors */
+.chatOnlineWrapper::-webkit-scrollbar {
+  width: 1px;
+}
+
+.chatOnlineWrapper::-webkit-scrollbar-track {
+  background-color: #000000;
+}
+
+.chatOnlineWrapper::-webkit-scrollbar-thumb {
+  background-color: #6d6a6a;
+  border-radius: 6px;
+}
+
+.chatOnlineWrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #716f71;
+}
+
+/* General scrollbar styles for Firefox and other browsers */
+.chatOnlineWrapper::-moz-scrollbar {
+  width: 12px;
+}
+
+.chatOnlineWrapper::-moz-scrollbar-thumb {
+  background-color: #535256;
+  border-radius: 6px;
+}
+
+.chatOnlineWrapper::-moz-scrollbar-thumb:hover {
+  background-color: #716f71;
+}

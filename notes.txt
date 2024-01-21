@@ -1,0 +1,98 @@
+*****************************we have to prevent our client component from being async function*****************************
+
+
+
+in jsconfig.json file 
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+
+in this  "@/*": ["./src/*"] means that src is our root folder, 
+for ex:- 
+previously we import a component import NavBar from "../../component/navbar/navbar
+but in this case we can directly do @/component/navbar/navbar
+
+
+
+-----> To prevent hydration error we can use <----- 
+
+1 useEffect
+
+- Nextjs render the component on the server side first whether it is a server component or client.
+
+2 Dynamic import
+
+- const component = dynamic(()=>import("component_path"), {ssr:false})   ssr->server side rendering
+
+Now import this component in your server side component
+
+3 using suppressHydrationWarning in a html tag
+
+
+-----> Navigation <-----
+
+const router = useRouter from next/Navigation
+
+- router.push("/path")
+- router.replace("/")  u can not go back to the previous page
+- router.refresh() it will rerender the component
+- router.back() We can go to the previos page
+
+
+-----> How to get/set the query <-----
+
+const searchParams = useSearchParams()
+
+- searchParams.get("query name")
+
+using set() we can set the query
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+default fetch("https://jsonplaceholder.typicode.com/posts",{cache:"force-cache"});
+
+-->In nextjs when we make fetch request ny default we will get cached response due to this when we visit the other page and come back it we will get quick response.
+
+fetch("https://jsonplaceholder.typicode.com/posts",{cache:"no-store"});
+--> Above is used when our data is changing constantly so that we get the refreshed data
+
+
+fetch("https://jsonplaceholder.typicode.com/posts",{next:{revalidate:3600}});
+--> Above revalidate is used to refresh the data in every 1 hour.
+
+
+Note :-
+We can use unstable_noStore function from next/cache when we are not using fetch function
+
+example - 
+
+import { unstable_noStore as noStore } from "next/cache";
+
+export const GET_USER = async (id) => {
+  noStore()
+  try {
+    await connectToDb();
+    const user = await User.findById(id);
+    // console.log(id, user);
+    return user;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to fetch user!");
+  }
+};
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+ROUTE grouping
+
+Suppose you want to create two routes, 'login' and 'logout', inside the 'API' folder. Instead of creating two separate folders for each, you can create a single folder inside 'API' [...foldername]. Inside this folder, create a single 'route.js' or 'route.ts' file that will contain both the login and logout routes. This way, you can keep your code organized and avoid unnecessary duplication.
+
+Checkout [...nextauth] inside auth folder within the api folder for reference.
+
+
+-----------------------------------------------------------------------------------------------------------------------------

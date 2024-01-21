@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  gap: 100px;
+}
+
+/* The 'imgContainer' class is designated to have a flexible layout, occupying a relative position within the document flow. Its height is dynamically calculated using the 'calc()' function to ensure it takes the entire viewport height ('100vh') while deducting the combined heights of the navigation bar and footer, set at 200 pixels each. This calculation enables the image to span the remaining available vertical space within the viewport. */
+.imgContainer {
+  flex: 2;
+  position: relative;
+  height: calc(100vh - 200px);
+}
+
+.img {
+  object-fit: cover;
+}
+
+.textContainer {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.title {
+  font-size: 64px;
+}
+
+.detail {
+  display: flex;
+  gap: 20px;
+}
+
+.detailText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detailTitle {
+  color: gray;
+  font-weight: bold;
+}
+
+.detailValue {
+  font-weight: 500;
+}
+
+.content {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+  .imgContainerMobile {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .title {
+    font-size: 32px;
+  }
+  .content {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 769px) {
+  .imgContainerMobile {
+    display: none;
+  }
+}
